@@ -9,6 +9,13 @@ export const LoginContainer = styled.div`
     align-items: center;
     justify-content: center;
 
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     img{ 
         width: 180px;
         height: 180px;
@@ -36,7 +43,7 @@ export const LoginContainer = styled.div`
         margin-bottom: 15px;
     }
 
-    a{
+    p{
         font-family: 'Lexend Deca', sans-serif;
         text-decoration: underline;
         font-size: 14px;
