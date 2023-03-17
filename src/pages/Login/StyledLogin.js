@@ -1,19 +1,6 @@
 import styled from "styled-components"
-import logo from "../assets/Logo.png"
 
-export default function Login(){
-    return (
-        <LoginContainer>
-            <img src={logo} alt="logo trackit" />
-
-            <input type="text" required placeholder="email" />
-            <input type="text" required placeholder="senha" />
-            <button>Entrar</button>
-            <a>Não tem uma conta? Cadastre-se!</a>
-        </LoginContainer>
-    );
-}
-const LoginContainer = styled.div`
+export const LoginContainer = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;400;700&display=swap');
     
     height: 100vh;

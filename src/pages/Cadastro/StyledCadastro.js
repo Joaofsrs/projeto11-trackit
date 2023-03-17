@@ -1,23 +1,6 @@
 import styled from "styled-components"
-import logo from "../assets/Logo.png"
 
-export default function Cadastro(){
-    return (    
-        <CadastroContainer>
-            <img src={logo} alt="logo da pagina" />
-
-            <input type="text" required placeholder="email" />
-            <input type="text" required placeholder="senha" />
-            <input type="text" required placeholder="nome" />
-            <input type="text" required placeholder="foto" />
-            <button>Cadastrar</button>
-            <a>Já tem uma conta? Faça login!</a>
-
-        </CadastroContainer>
-    );
-}
-
-const CadastroContainer = styled.div`
+export const CadastroContainer = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;400;700&display=swap');
     
     height: 100vh;
@@ -61,4 +44,4 @@ const CadastroContainer = styled.div`
         letter-spacing: 0em;
         color: #52B6FF;
     }
-`
+`;
