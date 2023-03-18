@@ -44,11 +44,11 @@ export default function Cadastro(){
                 <input id="password"  name="password" value={form.password} onChange={handleForm} required placeholder="senha" />
                 <input id="name" name="name" value={form.name} onChange={handleForm} required placeholder="nome" />
                 <input id="image" name="image" value={form.image} onChange={handleForm} required placeholder="foto" />
-                <button type="submit" disabled={disableButton} >Cadastrar</button>
+                <button className="cadastrar" type="submit" disabled={disableButton} >Cadastrar</button>
+                <Link to={"/"} >
+                    <button className="login">Já tem uma conta? Faça login!</button>
+                </Link>
             </form>
-            <Link to={"/"} >
-                <p>Já tem uma conta? Faça login!</p>
-            </Link>
 
         </CadastroContainer>
     );

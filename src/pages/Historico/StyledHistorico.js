@@ -88,7 +88,7 @@ export const ContainerFooter = styled.footer`
         width: 91px;
         height: 91px;
     }
-    p{
+    p{  
         font-family: 'Lexend Deca', sans-serif;
         color: #52B6FF;
         margin: 0;
@@ -96,5 +96,8 @@ export const ContainerFooter = styled.footer`
         font-weight: 400;
         line-height: 22px;
         text-align: center;
+    }   
+    a{
+        text-decoration: none;
     }
 `;

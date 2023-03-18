@@ -1,11 +1,9 @@
 import { ContainerHoje, ContainerHeader, ContainerTarefas, ContainerTarefa, ContainerFooter } from "./StyledHoje";
 import perfil from "../../assets/perfil.png";
-import {
-    CircularProgressbar,
-    buildStyles
-} from "react-circular-progressbar";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 import check from "../../assets/check.png";
+import { Link } from "react-router-dom";
 
 export default function Hoje() {
     return (
@@ -34,25 +32,30 @@ export default function Hoje() {
                 </ContainerTarefas>
 
                 <ContainerFooter>
-                    <p>Hábitos</p>
-                    <div class="botaoPrincipal">
-                        <CircularProgressbar
-                            value={20}
-                            text="Hoje"
-                            background
-                            backgroundPadding={6}
-                            className="circularBar"
-                            styles={buildStyles({
-                                textSize: "17px",
-                                backgroundColor: "#3e98c7",
-                                textColor: "#fff",
-                                pathColor: "#fff",
-                                trailColor: "transparent"
-                            })}
-                        />
-                    </div>
-
-                    <p>Histórico</p>
+                    <Link to="/habitos" >
+                        <p>Hábitos</p>
+                    </Link>
+                    <Link to="/hoje">
+                        <div className="botaoPrincipal">
+                            <CircularProgressbar
+                                value={20}
+                                text="Hoje"
+                                background
+                                backgroundPadding={6}
+                                className="circularBar"
+                                styles={buildStyles({
+                                    textSize: "17px",
+                                    backgroundColor: "#3e98c7",
+                                    textColor: "#fff",
+                                    pathColor: "#fff",
+                                    trailColor: "transparent"
+                                })}
+                            />
+                        </div>
+                    </Link>
+                    <Link to="/historico" >
+                        <p>Histórico</p>
+                    </Link>
                 </ContainerFooter>
             </ContainerHoje>
         </>

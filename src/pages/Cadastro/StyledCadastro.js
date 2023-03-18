@@ -32,7 +32,7 @@ export const CadastroContainer = styled.div`
         color: #D4D4D4;
     }
 
-    button{
+    .cadastrar{
         font-family: 'Lexend Deca', sans-serif;
         width: 303px;
         height: 45px;
@@ -43,7 +43,9 @@ export const CadastroContainer = styled.div`
         margin-bottom: 15px;
     }
 
-    p{
+    .login{
+        border: none;
+        background-color: transparent;
         font-family: 'Lexend Deca', sans-serif;
         text-decoration: underline;
         font-size: 14px;

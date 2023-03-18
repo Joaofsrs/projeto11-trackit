@@ -32,7 +32,11 @@ export const LoginContainer = styled.div`
         color: #D4D4D4;
     }
 
-    button{
+    .send{
+        opacity: ${props => props.sendLogin ? 0.5 : 1 };
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-family: 'Lexend Deca', sans-serif;
         width: 303px;
         height: 45px;
@@ -43,7 +47,9 @@ export const LoginContainer = styled.div`
         margin-bottom: 15px;
     }
 
-    p{
+    .cadastro{
+        border: none;
+        background-color: transparent;
         font-family: 'Lexend Deca', sans-serif;
         text-decoration: underline;
         font-size: 14px;

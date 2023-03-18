@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ContainerHabitos = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;400;700&display=swap');
+    margin-top: 85px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,7 +10,6 @@ export const ContainerHabitos = styled.div`
 
     div{
         width: 90%;
-        margin-top: 85px;
         display: flex;
         justify-content: space-between;
         h2{
@@ -49,9 +49,10 @@ export const ContainerFooter = styled.footer`
     bottom: 0px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .botaoPrincipal{
+        font-family: 'Lexend Deca', sans-serif;
         position: absolute;
         left: 50%;
         bottom: 0;
@@ -59,7 +60,7 @@ export const ContainerFooter = styled.footer`
         width: 91px;
         height: 91px;
     }
-    p{
+    p{  
         font-family: 'Lexend Deca', sans-serif;
         color: #52B6FF;
         margin: 0;
@@ -67,6 +68,9 @@ export const ContainerFooter = styled.footer`
         font-weight: 400;
         line-height: 22px;
         text-align: center;
+    }   
+    a{
+        text-decoration: none;
     }
 `;
 
@@ -97,3 +101,45 @@ export const ContainerHeader = styled.header`
         border-radius: 98px;
     }
 `;
+
+export const ContainerCriacao = styled.div`
+    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;400;700&display=swap');
+    margin-top: 22px;
+    height: 180px;
+    width: 340px;
+    border-radius: 5px;
+    background-color: white;
+    .nomeCriacao{
+        margin: 18px 18px 0 18px;
+        height: 45px;
+        width: 303px;
+        border-radius: 5px;
+        border: 1px solid #D4D4D4;
+        color: #D4D4D4;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        text-align: left;
+    }
+    .semana{
+        margin-left: 18px;
+        margin-top: 10px;
+        width: 240px;
+        display: flex;
+        justify-content: space-between;
+    }
+`;
+
+export const DiaDaSemana = styled.input`
+    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;400;700&display=swap');
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid #D4D4D4;
+    color: #D4D4D4;
+    background-color: white;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+`
