@@ -1,6 +1,11 @@
 import { BoataoDia } from "./StyledHabitos";
+import UserContext from "../UserContext";
+import { useContext } from "react";
 
 export default function DiaDaSemana(props){
+
+    const { token, setToken } = useContext(UserContext);
+    const { image, setImage } = useContext(UserContext);
 
     function changeButtonDay(){
         let arrayAux = props.botoesDiaSemana;

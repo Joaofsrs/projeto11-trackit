@@ -4,8 +4,9 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import TarefaHoje from "./TarefaHoje";
+import UserContext from "../UserContext";
 
 const dayName = new Array("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado");
 const now = new Date();
@@ -15,11 +16,14 @@ export default function Hoje(props) {
     const [habitosHoje, setHabitoHoje] = useState([]);
     const [porcentagemConcluidos, setProcentagemConcluidos] = useState(0);
     const [habitosConcluidos, setHabitosConcluidos] = useState(0);
+    const { token, setToken } = useContext(UserContext);
+    const { image, setImage } = useContext(UserContext);
+    const { porcento, setPorcento } = useContext(UserContext);
 
     function getHoje(){
         const header = {
             headers: {
-                Authorization: `Bearer ${props.token}`,
+                Authorization: `Bearer ${token}`,
             }
         };
         axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/today", header)
@@ -45,6 +49,7 @@ export default function Hoje(props) {
             });
             setHabitosConcluidos(porcentagemAux);
             setProcentagemConcluidos(Math.round((porcentagemAux/habitosHoje.length)*100))
+            setPorcento(porcentagemConcluidos);
         }
     }, [habitosConcluidos, porcentagemConcluidos, habitosHoje]);
     
@@ -54,7 +59,7 @@ export default function Hoje(props) {
             <ContainerHoje>
                 <ContainerHeader data-test="header" >
                     <h1>TrackIt</h1>
-                    <img src={props.image} alt="foto de perfil do usuario" />
+                    <img src={image} alt="foto de perfil do usuario" />
                 </ContainerHeader>
 
 
@@ -66,7 +71,7 @@ export default function Hoje(props) {
                         return(
                             <TarefaHoje 
                                 key={element.id}
-                                token={props.token}
+                                token={token}
                                 setHabitosConcluidos= {setHabitosConcluidos}
                                 habitosConcluidos={habitosConcluidos}
                                 setProcentagemConcluidos={setProcentagemConcluidos}
@@ -90,7 +95,7 @@ export default function Hoje(props) {
                     <Link to="/hoje" data-test="today-link" >
                         <div className="botaoPrincipal">
                             <CircularProgressbar
-                                value={20}
+                                value={porcento}
                                 text="Hoje"
                                 background
                                 backgroundPadding={6}

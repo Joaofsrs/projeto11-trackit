@@ -1,8 +1,9 @@
 import { ContainerCriacao } from "./StyledHabitos";
 import DiaDaSemana from "./DiaDaSemana"
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner"
+import UserContext from "../UserContext";
 
 const arrayDias = [
     {id: 0, name: "D", clicado: false},
@@ -18,6 +19,9 @@ export default function CriaHabito(props){
     const [botoesDiaSemana, setBotoesDiaSemana] = useState(arrayDias);
     const [nomeNovoHabito, setNomeNovoHabito] = useState("");
     const [sendingHabito, setSendingHabito] = useState(false);
+
+    const { token, setToken } = useContext(UserContext);
+    const { image, setImage } = useContext(UserContext);
 
     function sendHabito(e){
         e.preventDefault();
@@ -36,7 +40,7 @@ export default function CriaHabito(props){
         };
         const header = {
             headers: {
-                Authorization: `Bearer ${props.token}`,
+                Authorization: `Bearer ${token}`,
             }
         };
         if(idsDias.length > 0){

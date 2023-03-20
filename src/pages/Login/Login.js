@@ -1,15 +1,18 @@
 import { LoginContainer } from "./StyledLogin";
 import logo from "../../assets/Logo.png";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
+import UserContext from "../UserContext";
 
 export default function Login(props){
     const [form, setForm] = useState({ email: "", password: "" })
     const [disableButton, setDisableButton] = useState(true);
     const [sendLogin, setSendLogin] = useState(false);
     const navigate = useNavigate();
+
+    const { setToken, setImage } = useContext(UserContext);
 
     useEffect(() => {
         if(form.email && form.password){
@@ -28,8 +31,8 @@ export default function Login(props){
         setSendLogin(true);
         axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", form)
             .then((res) => {
-                props.setToken(res.data.token)
-                props.setImage(res.data.image)
+                setToken(res.data.token)
+                setImage(res.data.image)
                 setSendLogin(false)
                 navigate("/hoje");
             })

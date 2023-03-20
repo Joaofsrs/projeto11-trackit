@@ -3,13 +3,19 @@ import perfil from "../../assets/perfil.png"
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 import { Link } from "react-router-dom";
+import UserContext from "../UserContext";
+import { useContext } from "react";
 
 export default function Histórico(props) {
+    const { token, setToken } = useContext(UserContext);
+    const { image, setImage } = useContext(UserContext);
+    const { porcento, setPorcento } = useContext(UserContext);
+
     return (
         <ContainerHistorico>
             <ContainerHeader data-test="header" >
                 <h1>TrackIt</h1>
-                <img src={props.image} alt="foto de perfil do usuario" />
+                <img src={image} alt="foto de perfil do usuario" />
             </ContainerHeader>
 
             <ContainerConteudo>
@@ -24,7 +30,7 @@ export default function Histórico(props) {
                     <Link to="/hoje" data-test="today-link" >
                         <div className="botaoPrincipal">
                             <CircularProgressbar
-                                value={20}
+                                value={porcento}
                                 text="Hoje"
                                 background
                                 backgroundPadding={6}

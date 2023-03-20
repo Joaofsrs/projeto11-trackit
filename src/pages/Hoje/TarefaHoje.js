@@ -1,15 +1,19 @@
 import { ContainerTarefa } from "./StyledHoje";
 import check from "../../assets/check.png";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import UserContext from "../UserContext";
 
 export default function TarefaHoje(props){
+    const { token, setToken } = useContext(UserContext);
+    const { image, setImage } = useContext(UserContext);
+
     const [carregando, setCarregando] = useState(false);
 
     function marcaDesmarcaHabito(){
         const header = {
             headers: {
-                Authorization: `Bearer ${props.token}`,
+                Authorization: `Bearer ${token}`,
             }
         };
         setCarregando(true);

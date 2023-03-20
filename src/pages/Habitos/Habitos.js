@@ -4,9 +4,10 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { Link } from "react-router-dom";
 import CriaHabito from "./CriaHabito"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import HabitoElemento from "./HabitoElemento";
+import UserContext from "../UserContext";
 
 const arrayDias = [
     {id: 0, name: "D", clicado: false},
@@ -22,10 +23,14 @@ export default function Habitos(props) {
     const [criacao, setCriacao] = useState(false);
     const [listaHabitos, setListaHabitos] = useState([]);
     
+    const { token, setToken } = useContext(UserContext);
+    const { image, setImage } = useContext(UserContext);
+    const { porcento, setPorcento } = useState(UserContext);
+
     function getListaHabitos(){
         const header = {
             headers: {
-                Authorization: `Bearer ${props.token}`,
+                Authorization: `Bearer ${token}`,
             }
         };
         axios.get("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits", header)
@@ -45,7 +50,7 @@ export default function Habitos(props) {
         <ContainerHabitos>
             <ContainerHeader data-test="header" >
                 <h1>TrackIt</h1>
-                <img src={props.image} alt="foto de perfil do usuario" />
+                <img src={image} alt="foto de perfil do usuario" />
             </ContainerHeader>
 
             <div>
@@ -56,7 +61,6 @@ export default function Habitos(props) {
             <ContainerPrincipal>
                 {criacao ?
                     <CriaHabito 
-                        token={props.token} 
                         setCriacao={setCriacao} 
                         getListaHabitos={getListaHabitos}
                     /> : ""
@@ -70,7 +74,6 @@ export default function Habitos(props) {
                             days={habito.days} 
                             name={habito.name} 
                             id={habito.id} 
-                            token={props.token} 
                             getListaHabitos={getListaHabitos} 
                         />
                     )
@@ -87,7 +90,7 @@ export default function Habitos(props) {
                     <Link to="/hoje" data-test="today-link" >
                         <div className="botaoPrincipal">
                             <CircularProgressbar
-                                value={20}
+                                value={porcento}
                                 text="Hoje"
                                 background
                                 backgroundPadding={6}
