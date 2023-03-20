@@ -46,7 +46,7 @@ export default function Hoje(props) {
             setHabitosConcluidos(porcentagemAux);
             setProcentagemConcluidos(Math.round((porcentagemAux/habitosHoje.length)*100))
         }
-    }, [porcentagemConcluidos]);
+    }, [habitosConcluidos, porcentagemConcluidos, habitosHoje]);
     
 
     return (

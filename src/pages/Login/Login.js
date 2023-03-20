@@ -30,6 +30,7 @@ export default function Login(props){
             .then((res) => {
                 props.setToken(res.data.token)
                 props.setImage(res.data.image)
+                setSendLogin(false)
                 navigate("/hoje");
             })
             .catch((err) => {
@@ -67,7 +68,7 @@ export default function Login(props){
                     data-test="login-btn" 
                     className="send" 
                     type="submit" 
-                    disabled={disableButton}  
+                    disabled={disableButton||sendLogin}  
                 >
                 {sendLogin ? 
                     <TailSpin

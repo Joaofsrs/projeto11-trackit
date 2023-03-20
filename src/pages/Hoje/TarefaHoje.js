@@ -19,6 +19,7 @@ export default function TarefaHoje(props){
                     console.log(res);
                     props.getHoje();
                     setCarregando(false);
+                    props.setHabitosConcluidos(props.habitosConcluidos - 1)
                 })
                 .catch((err) => {
                     console.log(err);
@@ -30,6 +31,7 @@ export default function TarefaHoje(props){
                     console.log(res);
                     props.getHoje();
                     setCarregando(false);
+                    props.setHabitosConcluidos(props.habitosConcluidos + 1)
                 })
                 .catch((err) => {
                     alert(err.message);

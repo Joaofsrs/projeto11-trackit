@@ -32,10 +32,10 @@ export default function Cadastro(){
                 navigate("/");
             })
             .catch((err) => {
-                setCarregado(false);
+                alert(`${err.message}\n${err.request.statusText} ${err.request.status}`);
                 setDisableButton(false);
                 setForm({ email: "", name: "", image: "", password: "" });
-                alert(`${err.message}\n${err.request.statusText} ${err.request.status}`);
+                setCarregado(false);
             });
     }
 

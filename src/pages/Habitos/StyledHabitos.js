@@ -183,9 +183,9 @@ export const BoataoDia = styled.input`
     height: 30px;
     width: 30px;
     border-radius: 5px;
-    border: 1px solid ${(props) => props.clicado ? "white" : "#CFCFCF"};
-    color: ${(props) => props.clicado ? "white" : "#CFCFCF"};
-    background-color: ${(props) => props.clicado ? "#CFCFCF" : "white"};
+    border: 1px solid ${(props) => props.clicado ? "#CFCFCF" : "#D4D4D4"};
+    color: ${(props) => props.clicado ? "#FFFFFF" : "#DBDBDB"};
+    background-color: ${(props) => props.clicado ? "#CFCFCF" : "#FFFFFF"};
     font-family: 'Lexend Deca', sans-serif;
     font-size: 20px;
     font-weight: 400;
