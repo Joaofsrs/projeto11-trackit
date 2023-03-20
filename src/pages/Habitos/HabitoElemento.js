@@ -1,7 +1,8 @@
 import { Habito, BoataoDia } from "./StyledHabitos";
 import lixeira from "../../assets/Lixeira.png"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import axios from "axios";
+import UserContext from "../UserContext";
 
 const arrayDias = [
     {id: 0, name: "D", clicado: false},
@@ -14,10 +15,13 @@ const arrayDias = [
 ];
 
 export default function HabitoElemento(props){
+    const { token, setToken } = useContext(UserContext);
+    const { image, setImage } = useContext(UserContext);
+    const { porcento, setPorcento } = useContext(UserContext);
     function deleteHabito(){
         const header = {
             headers: {
-                Authorization: `Bearer ${props.token}`,
+                Authorization: `Bearer ${token}`,
             }
         };
         axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${props.id}`, header)
