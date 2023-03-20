@@ -65,9 +65,10 @@ export default function CriaHabito(props){
     }
 
     return(
-        <ContainerCriacao sendingHabito={sendingHabito} > 
+        <ContainerCriacao data-test="habit-create-container" sendingHabito={sendingHabito} > 
             <form onSubmit={sendHabito}>
                 <input 
+                    data-test="habit-name-input"
                     className="nomeCriacao" type="text" 
                     required 
                     placeholder="nome do hábito" 
@@ -90,12 +91,14 @@ export default function CriaHabito(props){
                 </div>
                 <div className="botoes">
                     <button 
+                        data-test="habit-create-cancel-btn"
                         className="cancelar" 
                         name="cancelar" 
                         onClick={sendCancel} 
                         disabled={sendingHabito} 
                     >Cancelar</button>
                     <button 
+                        data-test="habit-create-save-btn"
                         type="submit" 
                         className="salvar" 
                         name="salvar" 

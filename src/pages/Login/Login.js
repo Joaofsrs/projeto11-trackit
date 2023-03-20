@@ -42,9 +42,32 @@ export default function Login(props){
             <img src={logo} alt="logo trackit" />
 
             <form onSubmit={getLogin}>
-                <input id="email" name="email" onChange={handleForm} value={form.email} required placeholder="email" disabled={sendLogin} />
-                <input id="password" name="password" onChange={handleForm} value={form.password} required placeholder="senha" disabled={sendLogin} />
-                <button className="send" type="submit" disabled={disableButton}  >
+                <input 
+                    data-test="email-input"
+                    id="email" 
+                    name="email" 
+                    onChange={handleForm} 
+                    value={form.email} 
+                    required 
+                    placeholder="email" 
+                    disabled={sendLogin} 
+                />
+                <input 
+                    data-test="password-input"
+                    id="password" 
+                    name="password" 
+                    onChange={handleForm} 
+                    value={form.password} 
+                    required 
+                    placeholder="senha" 
+                    disabled={sendLogin} 
+                />
+                <button 
+                    data-test="login-btn" 
+                    className="send" 
+                    type="submit" 
+                    disabled={disableButton}  
+                >
                 {sendLogin ? 
                     <TailSpin
                     height="35"
@@ -59,8 +82,11 @@ export default function Login(props){
                     "Entrar"
                 }
                 </button>
-                <Link to={"/cadastro"}>
-                    <button className="cadastro" disabled={sendLogin} >Não tem uma conta? Cadastre-se!</button>
+                <Link data-test="singup-link" to={"/cadastro"}>
+                    <button 
+                        className="cadastro" 
+                        disabled={sendLogin} 
+                    >Não tem uma conta? Cadastre-se!</button>
                 </Link>
             </form>
         </LoginContainer>

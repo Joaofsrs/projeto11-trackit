@@ -50,7 +50,7 @@ export default function Habitos(props) {
 
             <div>
                 <h2>Meus hábitos</h2>
-                <button onClick={() => setCriacao(true)}>+</button>
+                <button data-test="habit-create-btn" onClick={() => setCriacao(true)}>+</button>
             </div>
                 
             <ContainerPrincipal>
@@ -80,11 +80,11 @@ export default function Habitos(props) {
             </ContainerPrincipal>
                 
 
-            <ContainerFooter>
-                    <Link to="/habitos" >
+            <ContainerFooter data-test="menu" >
+                    <Link to="/habitos" data-test="habit-link" >
                         <p>Hábitos</p>
                     </Link>
-                    <Link to="/hoje">
+                    <Link to="/hoje" data-test="today-link" >
                         <div className="botaoPrincipal">
                             <CircularProgressbar
                                 value={20}
@@ -102,7 +102,7 @@ export default function Habitos(props) {
                             />
                         </div>
                     </Link>
-                    <Link to="/historico" >
+                    <Link to="/historico" data-test="history-link" >
                         <p>Histórico</p>
                     </Link>
                 </ContainerFooter>

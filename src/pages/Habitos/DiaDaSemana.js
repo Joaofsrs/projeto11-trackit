@@ -20,6 +20,7 @@ export default function DiaDaSemana(props){
     return(
         <>
             <BoataoDia 
+                data-test="habit-day"
                 id={props.id} 
                 type="button" 
                 name={props.id} 

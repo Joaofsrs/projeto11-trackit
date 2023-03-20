@@ -17,11 +17,11 @@ export default function Histórico() {
                 <h3>Em breve você poderá ver o histórico dos seus hábitos aqui!</h3>
             </ContainerConteudo>
 
-            <ContainerFooter>
-                    <Link to="/habitos" >
+            <ContainerFooter data-test="menu" >
+                    <Link to="/habitos" data-test="habit-link" >
                         <p>Hábitos</p>
                     </Link>
-                    <Link to="/hoje">
+                    <Link to="/hoje" data-test="today-link" >
                         <div className="botaoPrincipal">
                             <CircularProgressbar
                                 value={20}
@@ -39,7 +39,7 @@ export default function Histórico() {
                             />
                         </div>
                     </Link>
-                    <Link to="/historico" >
+                    <Link to="/historico" data-test="history-link" >
                         <p>Histórico</p>
                     </Link>
                 </ContainerFooter>

@@ -30,11 +30,12 @@ export default function HabitoElemento(props){
     }
 
     return(
-        <Habito>
-            <h2>{props.name}</h2>
+        <Habito data-test="habit-container" >
+            <h2 data-test="habit-name" >{props.name}</h2>
             <div className="dias" >
                 {arrayDias.map((element) => 
                     <BoataoDia 
+                        data-test="habit-day"
                         key={element.id}
                         id={element.id} 
                         type="button" 
@@ -44,7 +45,7 @@ export default function HabitoElemento(props){
                     />
                 )}
             </div>
-            <img src={lixeira} alt="icone de lixeira" onClick={deleteHabito} />
+            <img data-test="habit-delete-btn" src={lixeira} alt="icone de lixeira" onClick={deleteHabito} />
         </Habito>
     );
 }
