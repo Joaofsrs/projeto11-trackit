@@ -43,7 +43,7 @@ export default function Habitos(props) {
 
     return (
         <ContainerHabitos>
-            <ContainerHeader>
+            <ContainerHeader data-test="header" >
                 <h1>TrackIt</h1>
                 <img src={perfil} alt="foto de perfil do usuario" />
             </ContainerHeader>

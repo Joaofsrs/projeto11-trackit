@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function Histórico() {
     return (
         <ContainerHistorico>
-            <ContainerHeader>
+            <ContainerHeader data-test="header" >
                 <h1>TrackIt</h1>
                 <img src={perfil} alt="foto de perfil do usuario" />
             </ContainerHeader>
