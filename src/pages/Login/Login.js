@@ -29,6 +29,7 @@ export default function Login(props){
         axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", form)
             .then((res) => {
                 props.setToken(res.data.token)
+                props.setImage(res.data.image)
                 navigate("/hoje");
             })
             .catch((err) => {

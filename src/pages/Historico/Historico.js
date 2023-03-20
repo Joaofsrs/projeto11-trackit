@@ -4,12 +4,12 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 import { Link } from "react-router-dom";
 
-export default function Histórico() {
+export default function Histórico(props) {
     return (
         <ContainerHistorico>
             <ContainerHeader data-test="header" >
                 <h1>TrackIt</h1>
-                <img src={perfil} alt="foto de perfil do usuario" />
+                <img src={props.image} alt="foto de perfil do usuario" />
             </ContainerHeader>
 
             <ContainerConteudo>

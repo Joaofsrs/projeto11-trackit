@@ -33,7 +33,11 @@ export const CadastroContainer = styled.div`
     }
 
     .cadastrar{
+        opacity: ${props => props.carregando ? 0.5 : 1 };
         font-family: 'Lexend Deca', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 303px;
         height: 45px;
         color: white;

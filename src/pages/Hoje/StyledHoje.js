@@ -7,7 +7,7 @@ export const ContainerTarefas = styled.div`
     width: 100%;
     height: 100%;
     margin-top: 70px;
-
+    margin-bottom: 100px;
     h2{
         margin-top: 28px;
         margin-bottom: 8px;
@@ -38,7 +38,10 @@ export const ContainerTarefa = styled.div`
     height: 94px;
     width: 340px;
     border-radius: 5px;
-    div:nth-child(2){
+    margin-bottom: 10px;
+
+    .check{
+        border: none;
         margin: 13px;
         display: flex;
         align-items: center;
@@ -46,7 +49,7 @@ export const ContainerTarefa = styled.div`
         height: 69px;
         width: 69px;
         border-radius: 5px;
-        background-color: #E7E7E7;
+        background-color: ${props => props.done ? "#8FC549" : "#E7E7E7"};
         img{
             height: 28px;
             width: 35px;
@@ -68,6 +71,12 @@ export const ContainerTarefa = styled.div`
         font-weight: 400;
         letter-spacing: 0em;
         text-align: left;
+    }
+    .maiorSequencia{
+        color: ${props => props.done ? (props.quantidade ? "#8FC549" : "white") : "white"};
+    }
+    .sequenciaAtual{
+        color:  ${props => props.done ? "#8FC549" : "while"};
     }
 `;
 

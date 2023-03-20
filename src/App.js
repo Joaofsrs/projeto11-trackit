@@ -8,16 +8,17 @@ import { useState } from "react";
 
 export default function App() {
     const [token, setToken] = useState("");
+    const [image, setImage] = useState("");
 
     return (
         <div className="App">
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Login setToken={setToken} />} />
+                    <Route path="/" element={<Login setToken={setToken} setImage={setImage} />} />
                     <Route path="/cadastro" element={<Cadastro />} />
-                    <Route path="/habitos" element={<Habitos token={token} />} />
-                    <Route path="/hoje" element={<Hoje token={token} />} />
-                    <Route path="/historico" element={<Histórico token={token} />} />
+                    <Route path="/habitos" element={<Habitos token={token} image={image} />} />
+                    <Route path="/hoje" element={<Hoje token={token} image={image}  />} />
+                    <Route path="/historico" element={<Histórico token={token} image={image}  />} />
                 </Routes>
 
             </BrowserRouter>
