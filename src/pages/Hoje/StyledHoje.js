@@ -26,7 +26,7 @@ export const ContainerTarefas = styled.div`
         width: 340px;
         font-weight: 400;
         text-align: left;
-        color: #BABABA;
+        color: ${props => props.porcentagem ? "#8FC549" : "#BABABA"};
     }
 `;
 

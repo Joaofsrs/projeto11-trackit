@@ -58,7 +58,7 @@ export default function Hoje(props) {
                 </ContainerHeader>
 
 
-                <ContainerTarefas>
+                <ContainerTarefas porcentagem={porcentagemConcluidos > 0} >
                     <h2 data-test="today" >{messageDate}</h2>
                     <h3 data-test="today-counter" >{(porcentagemConcluidos > 0) ? `${porcentagemConcluidos}% dos hábitos concluídos` : "Nenhum hábito concluído ainda"}</h3>
                     
