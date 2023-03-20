@@ -3,7 +3,7 @@ import logo from "../../assets/Logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { TailSpin } from "react-loader-spinner"
+import { TailSpin } from "react-loader-spinner";
 
 export default function Login(props){
     const [form, setForm] = useState({ email: "", password: "" })
@@ -28,7 +28,6 @@ export default function Login(props){
         setSendLogin(true);
         axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login", form)
             .then((res) => {
-                console.log(res);
                 props.setToken(res.data.token)
                 navigate("/hoje");
             })
